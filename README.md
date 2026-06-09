@@ -39,6 +39,24 @@ pip install "glassloop[ml]"           # + open-weight model tools (torch, transf
 pip install "glassloop[gms]"          # + the licensed GMS backend (knowlytix; see below)
 ```
 
+## Quickstart
+
+A gate (or policy) is just `(action, state) -> ALLOW / DENY / ESCALATE`:
+
+```python
+from glassloop.core import ToolCall
+from glassloop.governance import pii_policy
+
+action = ToolCall(tool_name="send_reply", arguments={"message": "Your SSN is 123-45-6789."})
+verdict = pii_policy(action, None)
+print(verdict.decision.value, "—", verdict.reason)   # escalate — detected PII: ssn
+```
+
+Those policies compose into a `GovernanceHarness` that runs gates *before* each
+agent action. For the full live `ALLOW / DENY / ESCALATE` stream and the
+hash-chained audit trail, see the runnable demos in
+[`beyond-ship-and-pray`](https://github.com/knowlytix/beyond-ship-and-pray#quickstart).
+
 ## The GMS upgrade (open-core)
 
 `glassloop` runs fully without a license. The GMS-backed features — geometric

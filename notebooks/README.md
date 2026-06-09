@@ -5,8 +5,7 @@ The chapter notebooks for the agent-building book, running on the open
 appendices A/B.
 
 ```bash
-pip install -e ..            # glassloop
-pip install -e ../../beyond-ship-and-pray   # proofloop — needed by ch.07 and ch.15
+pip install glassloop proofloop   # proofloop is used by ch.07 and ch.15
 jupyter lab
 ```
 
