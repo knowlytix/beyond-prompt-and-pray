@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "glassloop"
-version = "0.0.1"
+version = "0.1.0"
 description = "The glass-box agent loop — policy-governed AI agents with runtime gates, audit and escalation. GMS-optional."
 readme = "README.md"
 requires-python = ">=3.12"
