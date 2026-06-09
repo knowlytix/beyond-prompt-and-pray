@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glassloop"
+version = "0.0.1"
+description = "The glass-box agent loop — policy-governed AI agents with runtime gates, audit and escalation. GMS-optional."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "A. Sudjianto" }]
+maintainers = [{ name = "Knowlytix" }]
+keywords = ["ai-agents", "agent", "governance", "guardrails", "runtime-monitoring", "audit", "llm"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pydantic>=2",
+    "numpy",
+]
+
+[project.optional-dependencies]
+ml = ["torch>=2.0", "transformers>=4.40"]
+anthropic = ["anthropic>=0.30"]
+gms = ["knowlytix"]              # licensed, installed separately — see README
+notebooks = ["jupyterlab", "matplotlib", "pandas"]
+dev = ["pytest", "ruff", "black"]
+all = ["glassloop[ml,anthropic,notebooks]"]
+
+[project.urls]
+Homepage = "https://github.com/knowlytix/beyond-prompt-and-pray"
+Repository = "https://github.com/knowlytix/beyond-prompt-and-pray"
+Issues = "https://github.com/knowlytix/beyond-prompt-and-pray/issues"
+GMS = "https://knowlytix.ai/"
+
+[tool.setuptools.packages.find]
+include = ["glassloop*"]
