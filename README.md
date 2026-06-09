@@ -57,4 +57,4 @@ Edition* — see [knowlytix.ai](https://knowlytix.ai/).
 
 ## License
 
-Apache-2.0. © 2026 Knowlytix. Authored by A. Sudjianto.
+Apache-2.0. © 2026 Knowlytix.
